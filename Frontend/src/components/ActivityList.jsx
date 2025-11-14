@@ -121,13 +121,6 @@ const ActivityList = ({ refreshTrigger }) => {
                   <h3>{activity.activityType.charAt(0).toUpperCase() + activity.activityType.slice(1)}</h3>
                   <p className="activity-date">{formatDate(activity.date)}</p>
                 </div>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(activity.id)}
-                  title="Delete activity"
-                >
-                  ×
-                </button>
               </div>
               <div className="activity-details">
                 <p>{getActivityDetails(activity)}</p>

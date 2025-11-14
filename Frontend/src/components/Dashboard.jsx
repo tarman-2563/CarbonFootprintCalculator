@@ -42,11 +42,9 @@ const Dashboard = () => {
   const fetchDashboardData = async () => {
     setLoading(true);
     try {
-      // Fetch total emissions
       const totalResponse = await getTotalEmissions();
       setTotalEmissions(totalResponse.totalCo2e || 0);
 
-      // Calculate activity breakdown
       if (totalResponse.activities) {
         const breakdown = {
           commute: 0,
@@ -61,14 +59,12 @@ const Dashboard = () => {
         setActivityBreakdown(breakdown);
       }
 
-      // Fetch period data
       const periodResponse = await getEmissionsByPeriod({
         period,
         days: period === 'day' ? 7 : 30,
       });
       setDailyData(periodResponse.data || []);
 
-      // Fetch weekly data
       const weeklyResponse = await getEmissionsByPeriod({
         period: 'week',
         days: 30,
