@@ -1,0 +1,159 @@
+.dashboard-container {
+  padding: 2rem;
+  background: #f6fdf7; /* soft greenish background */
+}
+
+/* ---------------- HEADER ---------------- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #1b1d1b; /* keep text black */
+  font-size: 2rem;
+}
+
+/* ---------------- PERIOD SELECTOR ---------------- */
+.period-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.period-selector button {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #d9eadb;
+  background: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #222; /* keep text dark */
+  transition: all 0.25s ease;
+}
+
+.period-selector button:hover {
+  border-color: #43A047;
+  background: #ebf8ed;
+  color: #2e7d32;
+}
+
+.period-selector button.active {
+  background: linear-gradient(135deg, #43A047, #2e7d32);
+  color: white;
+  border-color: #2e7d32;
+  box-shadow: 0 2px 8px rgba(67, 160, 71, 0.3);
+}
+
+/* ---------------- STAT CARDS ---------------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(145deg, #ffffff, #f2f7f3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.stat-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #4d4d4d; /* darker grey text */
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111; /* keep text black */
+}
+
+.stat-label {
+  margin-top: 0.5rem;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* CATEGORY COLORS (GREEN TONES) */
+.stat-card.total {
+  border-top: 4px solid #43A047;
+}
+
+.stat-card.commute {
+  border-top: 4px solid #2E7D32;
+}
+
+.stat-card.food {
+  border-top: 4px solid #66BB6A;
+}
+
+.stat-card.electricity {
+  border-top: 4px solid #A5D6A7;
+}
+
+/* ---------------- CHARTS ---------------- */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid #43A047;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  height: 400px;
+}
+
+.chart-card.breakdown {
+  height: 350px;
+}
+
+/* ---------------- LOADING ---------------- */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    height: 300px;
+  }
+}

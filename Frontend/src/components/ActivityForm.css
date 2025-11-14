@@ -1,0 +1,87 @@
+/* ActivityForm.css (improved green + white UI) */
+:root {
+  --green-600: #2e8b57;
+  --green-700: #256a45;
+  --green-100: #eaf7ef;
+  --error: #c0392b;
+  --success: #2ecc71;
+}
+
+.activity-form-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.form-title {
+  color: black;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1f2937;
+}
+
+input, select, textarea {
+  border: 1.5px solid #d1d5db;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  outline: none;
+  transition: border 150ms ease, box-shadow 150ms ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--green-600);
+  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.15);
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, var(--green-600), var(--green-700));
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 106, 69, 0.15);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+
