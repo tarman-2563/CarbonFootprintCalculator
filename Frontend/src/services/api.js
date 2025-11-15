@@ -41,43 +41,35 @@ export const getEmissionsByPeriod = async (params = {}) => {
 };
 
 
-export const getOffsetSuggestions = async (co2eAmount) => {
-  try {
-    const response = await axios.get("https://api.goldstandard.org/projects", {
-      params: { limit: 5 },
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Gold Standard API error:", error);
-    return {
-      projects: [
-        {
-          id: 1,
-          name: "Renewable Energy Project",
-          location: "India",
-          co2eOffset: co2eAmount * 0.5,
-          cost: co2eAmount * 0.02,
-          description: "Support renewable energy projects to offset your carbon footprint",
-        },
-        {
-          id: 2,
-          name: "Reforestation Project",
-          location: "Brazil",
-          co2eOffset: co2eAmount * 0.3,
-          cost: co2eAmount * 0.015,
-          description: "Plant trees to sequester carbon from the atmosphere",
-        },
-        {
-          id: 3,
-          name: "Clean Water Project",
-          location: "Kenya",
-          co2eOffset: co2eAmount * 0.2,
-          cost: co2eAmount * 0.01,
-          description: "Support clean water initiatives that reduce carbon emissions",
-        },
-      ],
-    };
-  }
+export const getOffsetSuggestions = (co2eAmount) => {
+  // Hardcoded offset suggestions
+  return [
+    {
+      id: 1,
+      name: "Renewable Energy Project",
+      location: "India",
+      co2eOffset: co2eAmount * 0.5,
+      cost: co2eAmount * 0.02,
+      description: "Support renewable energy projects to offset your carbon footprint",
+    },
+    {
+      id: 2,
+      name: "Reforestation Project",
+      location: "Brazil",
+      co2eOffset: co2eAmount * 0.3,
+      cost: co2eAmount * 0.015,
+      description: "Plant trees to sequester carbon from the atmosphere",
+    },
+    {
+      id: 3,
+      name: "Clean Water Project",
+      location: "Kenya",
+      co2eOffset: co2eAmount * 0.2,
+      cost: co2eAmount * 0.01,
+      description: "Support clean water initiatives that reduce carbon emissions",
+    },
+  ];
 };
+
 
 export default api;
